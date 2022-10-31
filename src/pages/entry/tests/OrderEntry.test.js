@@ -1,6 +1,10 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitFor,
+} from "../../../test-utils/testing-library-utils";
 import { rest } from "msw";
-import { server } from "../../../../mocks/server";
+import { server } from "../../../mocks/server";
 import OrderEntry from "../OrderEntry";
 
 test("handles error for scoops and toppings routes", async () => {
