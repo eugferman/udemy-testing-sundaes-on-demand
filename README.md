@@ -1,7 +1,9 @@
-Ejecutar testing: npm test
-Levantar proyecto: npm start
-Levantar server:
+Launch tests: npm test
 
-- Entrar en carppeta sundae-server-node
-- npm install (si no están instalados los node_modules)
+Launch proyect: npm start
+
+Launch server:
+
+- Go to folder sundae-server-node
+- npm install (If we don't have node_modules installed)
 - npm start
