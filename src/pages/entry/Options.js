@@ -8,7 +8,7 @@ import AlertBanner from "../common/AlertBanner";
 import { pricePerItem } from "../../constants";
 import { formatCurrency } from "../../utilities";
 
-import { useOrderDetails } from "../../context/orderDetails";
+import { useOrderDetails } from "../../context/OrderDetails";
 
 const Options = ({ optionType }) => {
   const [items, setItems] = useState([]);
@@ -43,7 +43,7 @@ const Options = ({ optionType }) => {
       <p>
         {title} total: {formatCurrency(totals[optionType])}
       </p>
-      <Row>{optionItems}</Row>;
+      <Row>{optionItems}</Row>
     </>
   );
 };

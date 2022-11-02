@@ -7,11 +7,9 @@ import OrderEntry from "../OrderEntry";
 test("update scoop subtotal when scoops change", async () => {
   const user = userEvent.setup();
   render(<Options optionType="scoops" />);
-
   // make sure total starts out $0.00
   const scoopsSubtotal = screen.getByText("Scoops total: $", { exact: false });
   expect(scoopsSubtotal).toHaveTextContent("0.00");
-
   // update vanilla scoops to 1 and check the subtotal
   const vanillaInput = await screen.findByRole("spinbutton", {
     name: "Vanilla",
@@ -57,12 +55,14 @@ test("update topping subtotal when toppings change", async () => {
 });
 
 describe("grand total", () => {
-  test("grand total updates properly if scoop is added first", async () => {
+  test("grand total initial state and updates properly if scoop is added first", async () => {
     const user = userEvent.setup();
     render(<OrderEntry />);
     const grandTotal = screen.getByRole("heading", {
       name: /Grand total: \$/,
     });
+
+    // check initial state $0.00
     expect(grandTotal).toHaveTextContent("0.00");
 
     // update vanilla scoops to 2 and check grand total
